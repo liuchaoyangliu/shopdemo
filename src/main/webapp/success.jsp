@@ -12,7 +12,9 @@
 </head>
 <body>
 <%
-    Student stu = (Student) session.getAttribute("stu");
+//    Student stu = (Student) session.getAttribute("stu");
+    ServletContext servletContext = request.getServletContext();
+    Student stu = (Student)servletContext.getAttribute("stu");
 %>
 
 

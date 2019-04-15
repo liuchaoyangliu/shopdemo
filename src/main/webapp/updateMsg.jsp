@@ -13,7 +13,9 @@
 <body>
 
 <%
-    Student stu = (Student) session.getAttribute("stu");
+//    Student stu = (Student) session.getAttribute("stu");
+    ServletContext servletContext = request.getServletContext();
+    Student stu = (Student)servletContext.getAttribute("stu");
 %>
 欢迎: <%= stu.getName()%>
 <form action="profSchoolServlet" method="get">

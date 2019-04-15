@@ -13,7 +13,7 @@ public class JdbcServer {
 
     static Logger logger = Logger.getLogger(JdbcServer.class);
 
-    public static Student get(String name){
+    public Student get(String name){
         Connection connection = JdbcPool.getConnection();
         PreparedStatement preparedStatement = null;
         ResultSet resultSet;
@@ -50,7 +50,7 @@ public class JdbcServer {
     }
 
 
-    public static boolean setProSchool(String name, String school, String prof){
+    public boolean setProSchool(String name, String school, String prof){
         logger.info("更改学生学校和专业, 传入参数,name:" + name + " school:" + school + " prof:" + prof);
         Connection connection = JdbcPool.getConnection();
         PreparedStatement preparedStatement = null;
@@ -84,7 +84,7 @@ public class JdbcServer {
     }
 
 
-    public static boolean setTech(String name, String[] tech){
+    public boolean setTech(String name, String[] tech){
         String tech1 = "";
         for (int i = 0; i < tech.length; i++) {
             tech1 += tech[i] + ",";

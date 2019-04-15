@@ -14,23 +14,15 @@ public class LoginServlet extends BaseServlet {
 
     public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        ServletContext sc = req.getServletContext();
-        Integer count = (Integer) sc.getAttribute("count");
-        if(count != null){
-            ++count;
-            sc.setAttribute("count", count);
-        }
-
-        req.setCharacterEncoding("UTF-8");
-        resp.setContentType("text/html;charset=utf-8");
         String name =req.getParameter("name");
         String password = req.getParameter("password");
         logger.info("LoginServlet被调用");
         logger.info("传入参数：name" + name + ",password:" + password);
         try{
-            Student stu = JdbcServer.get(name);
+            Student stu = jdbcServer.get(name);
             if(stu != null && stu.getPassword().equals(password)){
-                req.getSession().setAttribute("stu", stu);
+                ServletContext servletContext = req.getServletContext();
+                servletContext.setAttribute("stu", stu);
                 req.getRequestDispatcher("success.jsp").forward(req, resp);
             }else {
                 resp.sendRedirect("error.jsp");
