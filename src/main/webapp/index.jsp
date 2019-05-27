@@ -4,14 +4,24 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>登录</title>
+    <title></title>
 </head>
 <body>
-<h1 style="color:#ff0000">登录</h1>
-<form action="loginServlet" method="get">
-    用户名：<input type="text" name="name"><br>
-    密 码：<input type="password" name="password"><br>
-    <input type="submit" value="登录">
-</form>
+
+
+<%--<form action="frontDesk.jsp">--%>
+<%--    <input type="submit" value="前台系统">--%>
+<%--</form>--%>
+
+<input type = "button" value = "前台系统" onclick = "window.location.href = 'frontDesk.jsp'"><br>
+<input type = "button" value = "后台系统" onclick = "window.location.href = 'loginServlet'">
+
+
+<%--<form action="loginServlet">--%>
+<%--    <input type="submit" value="后台系统">--%>
+<%--</form>--%>
+
+
 </body>
 </html>
+

@@ -1,7 +1,6 @@
 package com.lcy.web.controller;
 
 import com.lcy.web.entity.Student;
-import com.lcy.web.server.JdbcServer;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;

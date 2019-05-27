@@ -1,8 +1,8 @@
-package com.lcy.web.server;
+package com.lcy.web.jdbcServer;
 
 import com.lcy.web.entity.Student;
 import org.apache.log4j.Logger;
-import util.JdbcPool;
+import com.lcy.web.util.JdbcPool;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

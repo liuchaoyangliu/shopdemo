@@ -1,4 +1,4 @@
-package util;
+package com.lcy.web.util;
 
 import org.apache.commons.dbcp.BasicDataSource;
 

@@ -1,6 +1,6 @@
 package com.lcy.web.controller;
 
-import com.lcy.web.server.JdbcServer;
+import com.lcy.web.jdbcServer.JdbcServer;
 import org.apache.log4j.Logger;
 
 import javax.servlet.ServletException;
