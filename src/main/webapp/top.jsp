@@ -18,5 +18,9 @@
         out.print("当前登录的用户是:" + name);
     }
 %>
+
+<input type = "button" value = "前台系统" onclick = "window.location.href = 'frontDesk.jsp'">
+<input type = "button" value = "后台系统" onclick = "window.location.href = 'loginServlet'">
+
 </body>
 </html>

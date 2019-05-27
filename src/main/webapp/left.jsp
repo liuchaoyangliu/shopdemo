@@ -1,4 +1,3 @@
-
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -18,8 +17,6 @@
     <tr>
         <td><a href="shopCartServlet?shopCard=shopCard">我的购物车</a></td>
     </tr>
-
-
 </table>
 </body>
 </html>

@@ -22,7 +22,7 @@ public class CommodityServlet extends HttpServlet {
         String target = null;
         target = request.getParameter("target");
 
-        if(target.equals("2")){
+        if(target != null && target.equals("2")){
             request.getRequestDispatcher("frontCommodity.jsp").forward(request, response);
         }else{
             request.getRequestDispatcher("commodity.jsp").forward(request, response);
