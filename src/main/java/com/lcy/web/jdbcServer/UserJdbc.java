@@ -193,4 +193,63 @@ public class UserJdbc {
     }
 
 
+    public boolean updateUsere(User user, String target){
+
+        Connection connection = JdbcPool.getConnection();
+        PreparedStatement preparedStatement = null;
+        try{
+
+            if(target.equals("1")){
+                String sql = "UPDATE \n" +
+                        "  `javaweb`.`user` \n" +
+                        "SET\n" +
+                        "  `username` = ?,\n" +
+                        "  `password` = ?,\n" +
+                        "  `age` = ?,\n" +
+                        "  `sex` = ?,\n" +
+                        "  `address` = ?,\n" +
+                        "  `phone` = ?,\n" +
+                        "  `email` = ?\n" +
+                        "WHERE `uuid` = ?";
+                preparedStatement = connection.prepareStatement(sql);
+                preparedStatement.setString(1, user.getUsername());
+                preparedStatement.setString(2, user.getPassword());
+                preparedStatement.setInt(3, user.getAge());
+                preparedStatement.setString(4, user.getSex());
+                preparedStatement.setString(5, user.getAddress());
+                preparedStatement.setString(6, user.getPhone());
+                preparedStatement.setString(7, user.getEmail());
+                preparedStatement.setString(8, user.getUuid());
+            }else {
+                String sql = "UPDATE \n" +
+                        "  `javaweb`.`user` \n" +
+                        "SET\n" +
+                        "  `education` = ?,\n" +
+                        "  `school` = ?,\n" +
+                        "  `profession` = ? \n" +
+                        "WHERE `uuid` = ?";
+                preparedStatement = connection.prepareStatement(sql);
+                preparedStatement.setString(1, user.getEducation());
+                preparedStatement.setString(2, user.getSchool());
+                preparedStatement.setString(3, user.getProfession());
+                preparedStatement.setString(4, user.getUuid());
+            }
+            preparedStatement.execute();
+            preparedStatement.close();
+            connection.close();
+        }catch (Exception e){
+            e.printStackTrace();
+            return false;
+        }finally {
+            try {
+                preparedStatement.close();
+                connection.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+
+        return true;
+    }
+
 }

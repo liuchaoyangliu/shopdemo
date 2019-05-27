@@ -26,6 +26,7 @@ public class ShopServer {
         CommoditySrver commoditySrver = CommoditySrver.getCommoditySrver();
         Commodity commodityOne = commoditySrver.getCommodityOne(uuid);
 
+
         shopList.add(commodityOne);
         return shopList;
     }
