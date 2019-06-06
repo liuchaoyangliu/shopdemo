@@ -1,27 +1,7 @@
 <%@ page import="com.lcy.web.entity.Commodity" %>
 <%@ page import="java.util.LinkedList" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
-<head>
-    <title></title>
-</head>
-<body>
-
-</body>
-</html>
-
-
-
-
-
-
-
-
-
-
-
-<%@ page import="com.lcy.web.entity.User" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <title>全部商品</title>
